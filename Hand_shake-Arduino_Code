@@ -1,0 +1,33 @@
+#include<Servo.h>
+Servo sho;
+Servo elb;
+void setup() {
+  // put your setup code here, to run once:
+  sho.attach(9);
+  elb.attach(5);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  int i=0;
+  int j=0;
+  for(i=0;i<=50;i++){
+    sho.write(i);
+    delay(10);
+  }
+  elb.write(0);
+  delay(350);
+  elb.write(15);
+  delay(350);
+  elb.write(0);
+  delay(350);
+  elb.write(15);
+  delay(350);
+  elb.write(0);
+  delay(350);
+  for(i=50;i>0;i--){
+    sho.write(i);
+    delay(10);
+  }
+  delay(1000);
+}
